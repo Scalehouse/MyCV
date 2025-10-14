@@ -5,7 +5,7 @@
   --text: #e7eaf0;
   --muted: #9aa3af;
   --accent: #7c9cff;
-  --ring: #394867;
+  --ring: #ffffff;
   --radius: 16px;
   --maxw: 860px;
   --shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -26,6 +26,11 @@ body {
   line-height: 1.6;
 }
 
+.about-myself {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: justify;
+}
+
 .container {
   width: min(100% - 2rem, var(--maxw));
   margin-inline: auto;
@@ -35,7 +40,7 @@ body {
 .site-header {
   padding: 3rem 0 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.39);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.185), transparent);
 }
 
 .site-header .container {
@@ -46,7 +51,7 @@ body {
 }
 
 .avatar {
-  width: 96px; height: 96px;
+  width: 130px; height: 130px;
   border-radius: 50%;
   border: 2px solid var(--ring);
   box-shadow: var(--shadow);
@@ -56,7 +61,9 @@ body {
 h1 { margin: 0 0 .25rem; font-size: clamp(1.5rem, 2.8vw, 2.25rem); }
 .tagline { margin: 0 0 .5rem; color: var(--muted); }
 
-.social a {
+.social a,
+.pill-list a {
+  background-color: #353535a2;
   margin-top: 15px;
   font-weight: 600;
   display: inline-block;
