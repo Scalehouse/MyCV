@@ -2,13 +2,12 @@
 <!-- -->
 
 <html>
-<html lang="en"></html>
   <head>
+    <html lang="en">
     <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to my resumé</title>
     <meta name="description" content="This is the resume of Coco den Elzen, CK Den elzen">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,8 +15,22 @@
     <script src="scripts/index.js" defer></script>
   </head>
   <body>
-    <header>
-
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+          <img class="profile-picture" src="images/coco-profile-image.jpg">
+            <div>
+              <a class="my-name" aria-label="Coco den Elzen">Coco den Elzen</a>
+              <p class="sub-description-header">Campaign Manager @ Criteo, Performance Marketing, Agency Building</p>
+            </div>
+        <nav class="site-nav" aria-label="primary">
+        <!-- this is where the site header navigation will be for projects, work experience, etc-->
+          <ul id="primaryNav" class="nav-menu">
+            <li><a href="#projects" data-scroll="true">Projects</a></li>
+            <li><a href="#experience" data-scroll="true">Experience</a></li>
+            <li><a href="#degree" data-scroll="true">Degree</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
 
