@@ -26,17 +26,111 @@ body {
 /* CENTER */
 .name-block {
   justify-self: center;
+  text-align: center;
+}
+
+.name {
   margin: 0;
-  
+  font-size: 24px;
+  line-height: 28px;
 }
 
-.grid2 {
-  display: inline-block;
-  justify-self: left
+.job-title,
+.job-industry {
+  margin: 2px 0;
 }
 
-.grid3 {
-  display: inline-block;
+/* RIGHT */
+.nav {
+  justify-self: end;
+}
+
+.site-header-navigation {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header-navigation a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 400;
+}
+
+/* smooth anchor scroll (optional) */
+html { scroll-behavior: smooth; }
+
+/* section containers */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* --- Section 2: overlapping logos with its own background --- */
+.logo-strip {
+  background: #f5f7ff;
+  padding: 56px 16px;
+}
+
+.logo-stack {
+  position: relative;
+  height: 150px;           /* room for the overlap */
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.logo-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+
+  /* base transform kept in a variable */
+  --base: translate(-50%, -50%) rotate(0deg);
+  transform: var(--base);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* left / center / right positions + rotations */
+.logo-img:nth-child(1) { --base: translate(calc(-50% - 170px), -50%) rotate(-4deg); z-index: 1; }
+.logo-img:nth-child(2) { --base: translate(-50%, -50%) rotate(0.5deg);               z-index: 2; }
+.logo-img:nth-child(3) { --base: translate(calc(-50% + 170px), -50%) rotate(4deg);   z-index: 1; }
+
+/* hover now *adds* scale to the existing transform */
+.logo-img:hover {
+  transform: var(--base) scale(1.04);
+  z-index: 3; /* bring hovered card to the top */
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+/* --- Section 3: about section background --- */
+.about {
+  background: white;
+  padding: 48px 0 64px;
+}
+
+.about h2 {
+  margin: 0 0 12px;
+}
+
+.about p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* MOBILE FRIENDLY */
+@media (max-width: 600px) {
+  .site-header {grid-template-columns: 1fr;}
+  .profile-pic {justify-self: center;}
+  .nav {justify-self: center;}
 }
 
 
