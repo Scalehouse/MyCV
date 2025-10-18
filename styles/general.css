@@ -132,18 +132,13 @@ html { scroll-behavior: smooth; }
 
   .site-header {grid-template-columns: 1fr;} .profile-pic {justify-self: center;} .nav {justify-self: center;}
 
-  .logo-stack {
-    height: 360px;           /* taller so all three fit */
-  }
-  .logo-img {
-    width: 160px;
-    height: 160px;
-  }
+  .logo-stack { height: 200px; }
+  .logo-img { width: 34vw; height: 34vw; max-width: 160px; max-height: 160px; }
 
-  /* move one above center, one at center, one below */
-  .logo-img:nth-child(1) { --base: translate(-50%, calc(-50% - 110px)) rotate(-2deg); z-index: 1; }
-  .logo-img:nth-child(2) { --base: translate(-50%, -50%) rotate(0deg);                 z-index: 3; }
-  .logo-img:nth-child(3) { --base: translate(-50%, calc(-50% + 110px)) rotate(2deg);   z-index: 2; }
+  /* use vw so offsets shrink on small screens */
+  .logo-img:nth-child(1) { --base: translate(calc(-50% - 22vw), -50%) rotate(-3deg); }
+  .logo-img:nth-child(2) { --base: translate(-50%, -50%) rotate(0deg); }
+  .logo-img:nth-child(3) { --base: translate(calc(-50% + 22vw), -50%) rotate(3deg); }
 }
 
 
