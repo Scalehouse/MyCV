@@ -129,6 +129,9 @@ html { scroll-behavior: smooth; }
 
 /* Mobile: stack the cards vertically, centered */
 @media (max-width: 600px) {
+
+  .site-header {grid-template-columns: 1fr;} .profile-pic {justify-self: center;} .nav {justify-self: center;}
+
   .logo-stack {
     height: 360px;           /* taller so all three fit */
   }
