@@ -34,18 +34,19 @@
   box-sizing: border-box;
   width: 100%;
   border-bottom: 1px black solid;
+  text-align: justify;
 }
 
 .about-me-text, .about-me-image {
-  flex: 0 0 50%;
+  flex: 0 0 75%;
 }
 
 img.about-me-image {
   display: block;
   height: auto;
   width: 100%;
-  max-width: 300px;
-  border-radius: 30%;
+  max-width: 250px;
+  border-radius: 20%;
   margin-left: auto;
 }
 
@@ -59,7 +60,7 @@ img.about-me-image {
   padding: 32px 0;
 }
 
-h1 {
+h2 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 32px;
