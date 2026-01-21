@@ -1,26 +1,64 @@
 * {
-  border: 1px;
-  border-color: black;
-  border-style: solid;
-  font-family: Georgia;
+  margin: 0;
+  padding: 0;
+  font-family: georgia;
 }
 
-nav {
-  font-family: Georgia;
+
+
+.navigation, .navigation-options {
+  background-color: navy;
+  color: white;
+  font-family: Times Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase
-}
-
-nav {
-  background-color: darkslategrey;
-}
-
-ul, li {
+  text-transform: uppercase;
+  width: 100%;
   list-style: none;
   display: flex;
   justify-content: center;
-  margin: 10px;
+}
+
+.navigation-options {
+  gap: 50px;
+  padding: 24px 0;
+  margin: 0;
+}
+
+.about-me {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.about-me-text, .about-me-image {
+  flex: 0 0 50%;
+}
+
+.about-me-image img {
+  display: block;
+  height: auto;
+  width: 50%;;
+}
+
+
+
+.where-i-am-from {
+  padding: 32px 0;
+}
+
+.my-studies {
+  padding: 32px 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 32px;
+  margin: 0;
 }
 
 a {
