@@ -1,4 +1,32 @@
 * {
   border: 1px;
-  color: red;
+  border-color: black;
+  border-style: solid;
+  font-family: Georgia;
+}
+
+nav {
+  font-family: Georgia;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase
+}
+
+nav {
+  background-color: darkslategrey;
+}
+
+ul, li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: darkmagenta;
 }
