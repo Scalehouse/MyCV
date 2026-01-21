@@ -7,7 +7,7 @@
 
 
 .navigation, .navigation-options {
-  background-color: navy;
+  background-color: white;
   color: white;
   font-family: Times Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
@@ -17,6 +17,7 @@
   list-style: none;
   display: flex;
   justify-content: center;
+  border-bottom: 1px black solid;
 }
 
 .navigation-options {
@@ -32,22 +33,26 @@
   padding: 32px;
   box-sizing: border-box;
   width: 100%;
+  border-bottom: 1px black solid;
 }
 
 .about-me-text, .about-me-image {
   flex: 0 0 50%;
 }
 
-.about-me-image img {
+img.about-me-image {
   display: block;
   height: auto;
-  width: 50%;;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 30%;
+  margin-left: auto;
 }
 
 
 
 .where-i-am-from {
-  padding: 32px 0;
+  padding: 32px;
 }
 
 .my-studies {
@@ -59,12 +64,14 @@ h1 {
   font-weight: bold;
   font-size: 32px;
   margin: 0;
+  padding-bottom: 10px;
 }
 
 a {
-  color: white;
+  color: black;
 }
 
 a:hover {
-  color: darkmagenta;
+  color: navy;
+  font-size: 19px;
 }
