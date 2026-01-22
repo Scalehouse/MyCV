@@ -1,51 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link href="./styles/general.css" rel=stylesheet>
+    <!--
+      Basic metadata:
+      - charset enables proper text encoding
+      - viewport ensures responsive layout on mobile devices
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      Browser tab title
+    -->
+    <title>Coco | Portfolio</title>
+
+    <!--
+      Main stylesheet (ensure this path matches your folder structure)
+    -->
+    <link rel="stylesheet" href="./styles/general.css" />
   </head>
+
   <body>
-  <!-- This is the navigation of my website-->
-    <nav class="navigation">
-      <ul class="navigation-options">
-        <li><a>About Me</a></li>
-        <li><a>My Story</a></li>
-        <li><a>Experience</a></li>
-        <li><a>Projects</a></li>
-        <li><a>Goals</a></li>
-      </ul>
-    </nav>
+    <!--
+      Header + primary navigation:
+      - Uses semantic <header> and <nav>
+      - Links scroll to section IDs
+      - This stays visually simple and “editorial”
+    -->
+    <header class="topbar">
+      <nav class="topbar__nav" aria-label="Primary navigation">
+        <a class="topbar__brand" href="#about">COCO</a>
 
-  <!-- This is the section where I introduce myself (About me)-->
-    <section id="About Me" class="about-me">
-      <article class="about-me-text">
-        <h2>About Me</h2>
-        <p>Hi, I’m Coco. I work as an Account Manager at Amazon, with a background in programmatic advertising and campaign management.<br><br>I started my career at Criteo, where I joined as an intern and grew into a Campaign Manager role. Along the way, I had the chance to work internationally, starting out in Barcelona and eventually moving back to the Netherlands, where I’m originally from. I enjoy roles that sit at the intersection of strategy, data, and people, and I’m always curious about how things work behind the scenes.<br><br>Outside of work, I love learning new things (currently teaching myself how to code), playing golf, going to the gym, and planning my next trip. This website is my little corner of the internet where I share what I’m working on, what I’m learning, and things that inspire me along the way.<br><br>Thanks for stopping by.</p>
-      </article>
-      <img src="./images/coco-profile-image.jpg" class="about-me-image">
-    </section>
+        <ul class="topbar__menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#story">My Story</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#goals">Goals</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <!-- Here I want to list my storie, so where I started, and where I am at currently-->
-    <section class="where-i-am-from">
-      <article>
-        <h2>Where I am from</h2>
-        <p>I am born and raised in The Netherlands, specifically Capelle aan den IJssel. When I was young I eventually moved to the province Utrecht where I started my primary school years, and eventually moved to Drenthe, where I stayed till I moved abroad.</p>
-        <figure></figure>
-        <figcaption></figcaption>
-      </article>
-    </section>
+    <!--
+      Main page content:
+      - Each section uses a full-width background band
+      - Inner content stays centered with a max-width container
+    -->
+    <main>
+      <!--
+        HERO / FEATURED PANEL (white band):
+        - Big headline and your “About Me” content
+        - Right side shows your image
+      -->
+      <section id="about" class="band band--white">
+        <div class="container hero">
+          <div class="hero__text">
+            <p class="eyebrow">Featured</p>
+            <h1 class="hero__title">About Me</h1>
 
-    <section class="my-studies">
-      <article>
-        <h2>My Studies</h2>
-        <p>I started my studies in Groningen at Hanze University of Applied Sciences where I was studying the International Business curriculum. I studied here during the years 2020 and 2025, with a small gap year I needed to take because of a delay in my internship.</p>
-        <p>During Hanze we had a year abroad which was part of the curriculum where I went to Scotland where I studied a international business management minor at RGU. After this I went to the sunny Barcelona where I did my internship for Criteo which is a programmatic advertsing company. </p>
-        <figure></figure>
-        <figcaption></figcaption>
-      </article>
-    </section>
+            <p class="lead">
+              Hi, I’m Coco. I work as an Account Manager at Amazon, with a background
+              in programmatic advertising and campaign management.
+            </p>
 
+            <p class="body">
+              I started my career at Criteo, where I joined as an intern and grew into
+              a Campaign Manager role. Along the way, I had the chance to work internationally,
+              starting out in Barcelona and eventually moving back to the Netherlands.
+            </p>
+
+            <p class="body">
+              Outside of work, I love learning new things (currently teaching myself how to code),
+              playing golf, going to the gym, and planning my next trip. This website is my little
+              corner of the internet where I share what I’m working on and what I’m learning.
+            </p>
+
+            <!--
+              Metadata row:
+              - Small, structured info that looks “catalog-like”
+            -->
+            <dl class="meta">
+              <div class="meta__item">
+                <dt>Role</dt>
+                <dd>Account Manager</dd>
+              </div>
+              <div class="meta__item">
+                <dt>Focus</dt>
+                <dd>Programmatic • Strategy • Data</dd>
+              </div>
+              <div class="meta__item">
+                <dt>Base</dt>
+                <dd>Netherlands</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!--
+            Hero image:
+            - Uses <figure> for semantic media grouping
+            - <img> uses object-fit in CSS so it always crops nicely
+          -->
+          <figure class="hero__media">
+            <img
+              src="./images/IMG_9185.jpg"
+              alt="Portrait of Coco"
+              class="hero__img"
+            />
+            <figcaption class="caption">Portrait • Personal snapshot</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!--
+        MY STORY (paper-grey band):
+        - Timeline feel using cards with subtle borders
+      -->
+      <section id="story" class="band band--paper">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">My Story</h2>
+            <p class="section-tag">Timeline</p>
+          </header>
+
+          <div class="timeline">
+            <article class="timeline__item">
+              <h3 class="card-title">Netherlands → Education</h3>
+              <p class="card-text">
+                Born and raised in the Netherlands. Studied International Business at Hanze University of Applied Sciences.
+              </p>
+            </article>
+
+            <article class="timeline__item">
+              <h3 class="card-title">Scotland → Minor</h3>
+              <p class="card-text">
+                Studied an International Business Management minor at RGU during my year abroad.
+              </p>
+            </article>
+
+            <article class="timeline__item">
+              <h3 class="card-title">Barcelona → Internship</h3>
+              <p class="card-text">
+                Interned at Criteo in Barcelona, gaining hands-on experience in programmatic advertising.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        EXPERIENCE (white band):
+        - “Catalog cards” style blocks
+      -->
+      <section id="experience" class="band band--white">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-tag">Highlights</p>
+          </header>
+
+          <div class="cards">
+            <article class="card">
+              <p class="badge">Amazon</p>
+              <h3 class="card-title">Account Manager</h3>
+              <p class="card-text">
+                Managing programmatic campaigns, aligning strategy with performance goals,
+                and communicating clearly with stakeholders.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="badge">Criteo</p>
+              <h3 class="card-title">Campaign Manager</h3>
+              <p class="card-text">
+                Started as an intern and grew into a full-time role, with international experience along the way.
+              </p>
+            </article>
+
+            <article class="card">
+              <p class="badge">Strengths</p>
+              <h3 class="card-title">Strategy • Data • People</h3>
+              <p class="card-text">
+                I enjoy roles at the intersection of strategic thinking, analytics, and collaboration.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        PROJECTS (paper-grey band):
+        - Grid tiles inspired by “product catalog” layout
+      -->
+      <section id="projects" class="band band--paper">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-tag">Catalog</p>
+          </header>
+
+          <div class="tiles">
+            <article class="tile">
+              <div class="tile__thumb" aria-hidden="true"></div>
+              <div class="tile__body">
+                <p class="tile__kicker">HTML • CSS</p>
+                <h3 class="card-title">Portfolio Layout System</h3>
+                <p class="card-text">Responsive layout practice using grid and flex patterns.</p>
+              </div>
+            </article>
+
+            <article class="tile">
+              <div class="tile__thumb tile__thumb--alt" aria-hidden="true"></div>
+              <div class="tile__body">
+                <p class="tile__kicker">Learning</p>
+                <h3 class="card-title">Code Learning Journal</h3>
+                <p class="card-text">Tracking progress and notes while teaching myself to code.</p>
+              </div>
+            </article>
+
+            <article class="tile">
+              <div class="tile__thumb" aria-hidden="true"></div>
+              <div class="tile__body">
+                <p class="tile__kicker">UI</p>
+                <h3 class="card-title">Catalog Components</h3>
+                <p class="card-text">Reusable tiles and cards inspired by modern product UIs.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        GOALS (white band):
+        - Simple list with a strong navy accent bar
+      -->
+      <section id="goals" class="band band--white">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Goals</h2>
+            <p class="section-tag">Forward</p>
+          </header>
+
+          <ul class="accent-list">
+            <li>Build confidence with modern layout patterns (Grid + Flexbox).</li>
+            <li>Create clean, editorial-style portfolio projects.</li>
+            <li>Learn to translate design inspiration into code.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!--
+      Footer:
+      - Minimal, clean, and consistent with the bright theme
+    -->
+    <footer class="footer">
+      <p>© 2026 Coco • Built with HTML + CSS</p>
+    </footer>
   </body>
-  <footer>
-
-  </footer>
 </html>

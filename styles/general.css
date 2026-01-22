@@ -1,80 +1,476 @@
+/*
+  =========================================================
+  DESIGN TOKENS
+  =========================================================
+  These variables keep colors consistent across the site.
+  - White + paper-grey bands create section contrast
+  - Navy is used for typography and accents
+*/
+:root {
+  --navy: #0f1f3a;
+  --navy-soft: #243a5e;
+
+  --text: #14181f;
+  --muted: #4d5b6d;
+
+  --white: #ffffff;
+  --paper: #f3f5f8;
+
+  --line: #d6dde7;
+  --shadow: 0 10px 30px rgba(15, 31, 58, 0.08);
+
+  --radius: 16px;
+  --radius-sm: 12px;
+
+  --container: 1180px;
+  --pad-x: 24px;
+}
+
+/*
+  =========================================================
+  RESET
+  =========================================================
+  - Removes default spacing
+  - Ensures predictable sizing
+*/
 * {
   margin: 0;
   padding: 0;
-  font-family: georgia;
+  box-sizing: border-box;
 }
 
+/*
+  =========================================================
+  BASE PAGE STYLES
+  =========================================================
+  - Bright background
+  - Serif font for an editorial feel (you can switch later)
+*/
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.6;
+}
 
+/*
+  =========================================================
+  TOP NAVIGATION
+  =========================================================
+  - Clean, minimal, professional
+  - Sticky so it stays visible
+*/
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
 
-.navigation, .navigation-options {
-  background-color: white;
-  color: white;
-  font-family: Times Georgia, 'Times New Roman', Times, serif;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  width: 100%;
+/*
+  Nav container:
+  - Uses a max-width container with space between brand and menu
+*/
+.topbar__nav {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 16px var(--pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+  Brand on the left:
+  - Small, confident wordmark
+*/
+.topbar__brand {
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+}
+
+/*
+  Menu list:
+  - Horizontal, evenly spaced links
+*/
+.topbar__menu {
   list-style: none;
   display: flex;
-  justify-content: center;
-  border-bottom: 1px black solid;
+  gap: 40px;
 }
 
-.navigation-options {
-  gap: 50px;
-  padding: 24px 0;
-  margin: 0;
+/*
+  Menu links:
+  - Uppercase, navy, subtle hover
+*/
+.topbar__menu a {
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-size: 13px;
 }
 
-.about-me {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  padding: 32px;
-  box-sizing: border-box;
-  width: 100%;
-  border-bottom: 1px black solid;
+.topbar__menu a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/*
+  =========================================================
+  FULL-WIDTH SECTION BANDS
+  =========================================================
+  - This is the key to improving section readability
+  - Background color alternates between white and paper-grey
+*/
+.band {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.band--white {
+  background: var(--white);
+}
+
+.band--paper {
+  background: var(--paper);
+}
+
+/*
+  =========================================================
+  CONTENT CONTAINER
+  =========================================================
+  - Keeps text readable
+  - Allows the band background to stretch full width
+*/
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/*
+  =========================================================
+  HERO LAYOUT
+  =========================================================
+  - Two columns: text + image
+  - Matches “featured collection” aesthetics
+*/
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/*
+  Small “label” above hero title
+*/
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  color: var(--navy-soft);
+}
+
+/*
+  Hero title:
+  - Large, uppercase, navy
+*/
+.hero__title {
+  font-size: 56px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 10px 0 22px;
+}
+
+/*
+  Text styles:
+  - lead = slightly larger intro
+  - body = normal paragraph
+*/
+.lead {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 14px;
+  max-width: 70ch;
   text-align: justify;
 }
 
-.about-me-text, .about-me-image {
-  flex: 0 0 75%;
+.body {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 14px;
+  max-width: 72ch;
+  text-align: justify;
 }
 
-img.about-me-image {
-  display: block;
-  height: auto;
-  width: 100%;
-  max-width: 250px;
-  border-radius: 20%;
-  margin-left: auto;
+/*
+  Meta row:
+  - Looks like “catalog metadata”
+  - Creates structure beneath the hero copy
+*/
+.meta {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
-
-
-.where-i-am-from {
-  padding: 32px;
-}
-
-.my-studies {
-  padding: 32px;
-}
-
-h2 {
+.meta dt {
+  color: var(--navy-soft);
+  font-size: 11px;
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 24px;
+  letter-spacing: 0.10em;
+  margin-bottom: 4px;
+}
+
+.meta dd {
   margin: 0;
-  padding-bottom: 10px;
+  font-size: 13px;
+  color: var(--text);
 }
 
-a {
-  color: black;
+/*
+  Hero image:
+  - Card look with soft border + shadow
+  - object-fit crops the image nicely without stretching
+*/
+.hero__media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
-a:hover {
-  color: navy;
-  font-size: 19px;
-  font-weight: bolder;
-  cursor: pointer;
+.hero__img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.caption {
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/*
+  =========================================================
+  SECTION HEADERS
+  =========================================================
+  - Consistent titles across sections
+  - Underline effect via border
+*/
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 26px;
+}
+
+.section-title {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+.section-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--navy-soft);
+}
+
+/*
+  =========================================================
+  TIMELINE
+  =========================================================
+  - Simple stacked cards
+*/
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline__item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/*
+  =========================================================
+  CARDS (EXPERIENCE)
+  =========================================================
+  - 3-column grid on desktop
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/*
+  Badge:
+  - Small navy-accent label
+*/
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+  background: rgba(15, 31, 58, 0.06);
+  border: 1px solid rgba(15, 31, 58, 0.14);
+  padding: 8px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+/*
+  Card type styles (used across timeline/cards/tiles)
+*/
+.card-title {
+  font-size: 16px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/*
+  =========================================================
+  PROJECT TILES (CATALOG)
+  =========================================================
+  - 3-column grid
+  - Thumbnail block mimics “product tile” style
+*/
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.tile {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tile__thumb {
+  height: 160px;
+  background: linear-gradient(135deg, rgba(15, 31, 58, 0.06), rgba(15, 31, 58, 0.02));
+  border-bottom: 1px solid var(--line);
+}
+
+.tile__thumb--alt {
+  background: linear-gradient(135deg, rgba(36, 58, 94, 0.10), rgba(15, 31, 58, 0.02));
+}
+
+.tile__body {
+  padding: 16px;
+}
+
+.tile__kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--navy-soft);
+  margin-bottom: 8px;
+}
+
+/*
+  =========================================================
+  GOALS LIST
+  =========================================================
+  - Simple list with a navy accent bar
+*/
+.accent-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.accent-list li {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--navy);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  color: var(--muted);
+  box-shadow: var(--shadow);
+}
+
+/*
+  =========================================================
+  FOOTER
+  =========================================================
+*/
+.footer {
+  padding: 28px var(--pad-x);
+  text-align: center;
+  color: var(--navy-soft);
+  background: var(--white);
+}
+
+/*
+  =========================================================
+  RESPONSIVE
+  =========================================================
+  - Stack hero
+  - Convert grids to single column on mobile
+*/
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__img {
+    height: 340px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar__menu {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
 }
