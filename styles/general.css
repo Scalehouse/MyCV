@@ -492,8 +492,9 @@ strong {
   }
 
   .topbar__menu {
-    gap: 18px;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
+    display: flexbox;
   }
 }
