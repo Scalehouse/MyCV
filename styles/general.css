@@ -223,7 +223,7 @@ strong {
   padding-top: 18px;
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto auto auto ;
   gap: 14px;
 }
 
@@ -416,12 +416,8 @@ strong {
 
 .tile__thumb {
   height: 160px;
-  background: linear-gradient(135deg, rgba(15, 31, 58, 0.06), rgba(15, 31, 58, 0.02));
+  background: linear-gradient(135deg, rgba(0, 36, 99, 0.798), rgba(4, 186, 206, 0.597));
   border-bottom: 1px solid var(--line);
-}
-
-.tile__thumb--alt {
-  background: linear-gradient(135deg, rgba(36, 58, 94, 0.10), rgba(15, 31, 58, 0.02));
 }
 
 .tile__body {
@@ -487,7 +483,7 @@ strong {
   }
 
   .meta {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto auto auto;
   }
 
   .cards,
