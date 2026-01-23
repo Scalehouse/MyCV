@@ -143,6 +143,10 @@ strong {
   background: var(--paper);
 }
 
+.band--blog {
+  padding-bottom: 600px;
+}
+
 /*
   =========================================================
   CONTENT CONTAINER
