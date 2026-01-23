@@ -486,6 +486,54 @@ strong {
   background: var(--white);
 }
 
+/* 
+ ===============================================
+  blog post design
+ ===============================================
+
+*/
+
+.blog--post {
+  background-color: var(--paper);
+}
+
+.blog--container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  border-bottom: 1px solid var(--line);
+
+}
+
+.blog--header {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog--title {
+ color: var(--navy);
+}
+
+.blog--publish {
+  color:  var(--navy-soft);
+}
+
+.blog--heading {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.blog--text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: justify;
+  font-size: 14px;
+  padding-bottom: 24px;
+  display: 50%;
+  grid-column: 1fr;
+}
+
+
 /*
   =========================================================
   RESPONSIVE
